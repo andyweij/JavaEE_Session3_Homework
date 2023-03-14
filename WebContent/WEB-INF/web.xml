@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <servlet>
+    <servlet-name>BackendServlet</servlet-name>
+    <servlet-class>com.training.servlet.BackendServlet</servlet-class>
+    <init-param>
+      <param-name>GoodsImgPath</param-name>
+      <param-value>/DrinksImage</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BackendServlet</servlet-name>
+    <url-pattern>/BackendServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BackEndServlet</display-name>
+    <servlet-name>BackEndServlet</servlet-name>
+    <servlet-class>com.training.servlet.BackEndServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BackEndServlet</servlet-name>
+    <url-pattern>/BackEndServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FrontendServlet</display-name>
+    <servlet-name>FrontendServlet</servlet-name>
+    <servlet-class>com.training.servlet.FrontendServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FrontendServlet</servlet-name>
+    <url-pattern>/FrontendServlet.do</url-pattern>
+  </servlet-mapping>
+ 
+</web-app>

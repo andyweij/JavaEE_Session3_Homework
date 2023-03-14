@@ -1,0 +1,52 @@
+★ 飲料機作業(前臺、後臺)
+JavaEE_Session3_Homework
+HTML + Servlet + JDBC(JNDI)
+
+★ 商品資料表、商品資料建立(BEVERAGE.sql)
+
+★ eclipse tomcat JNDI 設置(server.xml)
+
+★ 商品圖片資料檔設置 
+1.建立商品圖檔資料夾  C:\home\VendingMachine\DrinksImage
+2.透過 eclipse部署 web專案(TomcatServerLocations.jpg)
+3.透過command模式至Tomcat安裝路徑下執行bat，建立商品圖檔 SymbolicLinks 資料夾
+C:\apache-tomcat-8.0.53\webapps\JavaEE_Session3_Homework\SymbolicDrinksImage.bat
+
+
+★ 實作功能(後臺)
+1.商品列表
+功能描述：查詢全部商品資訊列表
+http://localhost:8085/JavaEE_Session3_Homework/VM_Backend_GoodsList.html
+2.商品補貨作業
+功能描述：指定的飲料商品可更新「更改價格」和「補貨數量」(須加上既有庫存)
+http://localhost:8085/JavaEE_Session3_Homework/VM_Backend_GoodsReplenishment.html
+3.商品新增上架
+功能描述：新增商品可輸入「飲料名稱」、「設定價格」、「初始數量」、「商品圖片」
+http://localhost:8085/JavaEE_Session3_Homework/VM_Backend_GoodsCreate.html
+4.商品下架
+功能描述：可刪除指定的商品(刪除資料庫資料及商品圖片)
+http://localhost:8085/JavaEE_Session3_Homework/BackendServlet.do?action=deleteGoods&goodsName=coke_original&goodsImage=coke_original.jpg
+5.銷售報表
+功能描述：
+http://localhost:8085/JavaEE_Session3_Homework/VM_Backend_GoodsSaleReport.html
+
+
+★ 實作功能(前臺)
+功能描述：
+1.輸入「投入金額」、「購買數量罐」送出
+2.購買流程：
+2-1.針對各商品進行下列邏輯判斷
+依照「商品價格」、「購買商品總數量」、「現有庫存」計算「購買總金額」
+再和「投入金額」相比判斷是否足夠金額購買，有足夠金額、足夠庫存才進行後續購買流程作業
+2-2.資料庫出貨扣庫存更新
+2-3.資料庫新增訂單資料
+3.結果輸出:
+3-1.「投入金額」、「購買金額」、「找零金額」
+3-2.交易清單訂單資料
+「商品名稱」、「商品金額」、「購買數量」
+http://localhost:8085/JavaEE_Session3_Homework/VendingMachine.html
+
+
+★  Stock-service(Compare And Set)
+請求並發服務的情況下，庫存扣減可能會導致錯誤的資料更新
+參考出處：https://kknews.cc/zh-tw/tech/8mp838g.html(CompareAndSet.mht)
